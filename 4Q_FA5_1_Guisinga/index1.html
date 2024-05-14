@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        var input = prompt("Enter a number:");
+
+        while (isNaN(input)) {
+            alert("Input is invalid. Please enter a number.");
+            input = prompt("Please enter a number:");
+        }
+
+        var number = parseInt(input);
+
+        document.write("Number inputted: " + number + "<br/><br/>");
+
+        if (number % 2 === 0) { 
+            for (var a = 1; a <= number; a++) {
+                var row = "";
+                for (var b = 1; b <= a; b++) {
+                    row += number + " ";
+                }
+                document.write(row + "<br/>");
+            }
+        } else {
+            for (var a = 1; a <= number; a++) {
+                var row = "";
+                for (var b = 1; b <= number; b++) {
+                    row += number + " ";
+                }
+                document.write(row + "<br/>");
+            }
+        }
+    </script>
+</body>
+</html>

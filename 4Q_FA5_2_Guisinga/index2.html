@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contacts</title>
+</head>
+<body>
+    <label for="contacts">Contact Name</label>
+    <input type="text" id="contacts" placeholder="Type a name">
+    <button onclick="contactAdd()">Add</button>
+    <button onclick="contactRemove()">Remove</button>
+
+    <p id="displayContact"></p>
+
+    <script>
+        var callBook = [];
+
+        function contactRemove() {
+            if (callBook.length > 0) {
+                callBook.pop();
+                contactOutput();
+            }
+        }
+
+        function contactOutput() {
+            document.getElementById("displayContact").innerText = callBook.join(" ");
+        }
+
+        function contactAdd() {
+            var personName = document.getElementById("contacts").value.trim();
+            if (personName !== "") {
+                if (callBook.length < 7) {
+                    callBook.push(personName);
+                } else {
+                    callBook.push(personName);
+                    callBook.shift();
+                }
+                contactOutput();
+                document.getElementById("contacts").value = "";  
+            } else {
+                alert("Please enter a valid name.");
+            }
+        }
+    </script>
+</body>
+</html>
